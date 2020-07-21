@@ -9,6 +9,7 @@ html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
+	background-color: #f4f1de;
 }
 a {
 	text-decoration: none;
@@ -26,7 +27,7 @@ img {
 	object-fit: cover;
 }
 p {
-	color: black;
+	color: #1d3557;
 	font-size: 1.4rem;
 	margin-top: 5px;
 	line-height: 2.5rem;
@@ -36,22 +37,22 @@ p {
 .section-title {
 	font-size: 4rem;
 	font-weight: 300;
-	color: black;
+	color: #1d3557;
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: .2rem;
 	text-align: center;
 }
 .section-title span {
-	color: crimson;
+	color: #457b9d;
 }
 
 .cta {
 	display: inline-block;
 	padding: 10px 30px;
-	color: white;
+	color: #f1faee;
 	background-color: transparent;
-	border: 2px solid crimson;
+	border: 2px solid #457b9d;
 	font-size: 2rem;
 	text-transform: uppercase;
 	letter-spacing: .1rem;
@@ -60,16 +61,17 @@ p {
 	transition-property: background-color, color;
 }
 .cta:hover {
-	color: white;
-	background-color: crimson;
+	color: #f1faee;
+	background-color: #457b9d;
 }
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
-	color: white;
+	color: #f1faee;
 }
 .brand h1 span {
-	color: crimson;
+	color: #457b9d;
+	font-weight: ;
 }
 
 /* Header section */
@@ -119,7 +121,7 @@ p {
 	font-weight: 500;
 	letter-spacing: .2rem;
 	text-decoration: none;
-	color: white;
+	color: #f1faee;
 	text-transform: uppercase;
 	padding: 20px;
 	display: block;
@@ -141,13 +143,13 @@ p {
 	letter-spacing: initial;
 }
 #header .nav-list ul li:hover a {
-	color: crimson;
+	color: #457b9d;
 }
 #header .hamburger {
 	height: 60px;
 	width: 60px;
 	display: inline-block;
-	border: 3px solid white;
+	border: 3px solid #f1faee;
 	border-radius: 50%;
 	position: relative;
 	display: flex;
@@ -164,14 +166,14 @@ p {
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 3px solid white;
+	border: 3px solid #f1faee;
 	animation: hamburger_puls 1s ease infinite;
 }
 #header .hamburger .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
-	background-color: white;
+	background-color: #f1faee;
 	z-index: -1;
 }
 #header .hamburger .bar::after,
@@ -181,7 +183,7 @@ p {
 	height: 100%;
 	width: 100%;
 	left: 0;
-	background-color: white;
+	background-color: #a8dadc;
 	transition: .3s ease;
 	transition-property: top, bottom;
 }
@@ -214,7 +216,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: black;
+	background-color: #1d3557;
 	opacity: .8;
 	z-index: -1;
 }
@@ -250,7 +252,7 @@ p {
 	left: 0;
 	height: 100%;
 	width: 0;
-	background-color: crimson;
+	background-color: #457b9d;
 	animation: text_reveal_box 1s ease;
 	animation-delay: .5s;
 }
@@ -290,7 +292,7 @@ p {
 	margin-bottom: 20px;
 }
 #about .col-right .cta {
-	color: black;
+	color: #1d3557;
 	margin-bottom: 50px;
 	padding: 10px 20px;
 	font-size: 2rem;
@@ -299,7 +301,7 @@ p {
 	height: 100%;
 	width: 100%;
 	position: relative;
-	border: 10px solid white;
+	border: 10px solid #f1faee;
 }
 #about .col-left .about-img::after {
 	content: '';
@@ -308,7 +310,7 @@ p {
 	top: -17px;
 	height: 106%;
 	width: 109%;
-	border: 7px outset crimson;
+	border: 7px outset #457b9d;
 	border-radius: 1em;
 	z-index: -1;
 }
@@ -359,7 +361,7 @@ p {
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #a8dadc 0%, #457b9d 100%);
 }
 #footer .footer {
 	min-height: 200px;
@@ -368,7 +370,7 @@ p {
 	padding-bottom: 10px;
 }
 #footer h2 {
-	color: white;
+	color: #f1faee;
 	font-weight: 500;
 	font-size: 1.8rem;
 	letter-spacing: .1rem;
@@ -392,7 +394,7 @@ p {
 	filter: grayscale(0);
 }
 #footer p {
-	color: white;
+	color: #f1faee;
 	font-size: 1.3rem;
 }
 /* End Footer */
@@ -420,12 +422,12 @@ p {
 }
 @keyframes text_reveal {
 	100% {
-		color: white;
+		color: #f1faee;
 	}
 }
 @keyframes text_reveal_name {
 	100% {
-		color: crimson;
+		color: #457b9d;
 		font-weight: 500;
 	}
 }
@@ -468,7 +470,7 @@ p {
 		top: 34px;
 		height: 98%;
 		width: 98%;
-		border: 10px solid crimson;
+		border: 10px solid #457b9d;
 	}
 	#about .col-right {
 		text-align: left;
