@@ -1,10 +1,3 @@
-/* 
-
-Moonlight Template 
-
-https://templatemo.com/tm-512-moonlight
-
-*/
 
 @keyframes seq-preloader {
   50% {
@@ -513,6 +506,22 @@ nav a:hover::before {
 	margin-bottom: 20px;
 	margin-top: 0px;
 }
+.third-content h3 {
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: 0.5px;
+	display: inline-block;
+	margin-top: 0px;
+}
+.third-content ol li {
+	
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+	
 
 .third-content p {
 	font-size: 13px;
