@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surendra Pant - Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#home">SP</a>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-image" data-aos="fade-right">
+            <img src="img/hero.png" alt="Surendra Pant">
+        </div>
+        <div class="hero-content" data-aos="fade-left">
+            <h1 class="typing-text">Hello, I'm Surendra Pant</h1>
+            <div class="profession">
+                <span class="static-text">I am</span>
+                <span class="dynamic-text"></span>
+            </div>
+            <p class="hero-description">
+                Electrical & Electronics Engineer specializing in communication systems, IoT, and innovative tech solutions. Passionate about bridging hardware and software to solve real-world problems.
+            </p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#contact" class="cta-button">Say Hello!</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-up">
+                    <div class="about-intro" id="aboutIntro">
+                        <p>Hello! I'm Surendra Pant, an enthusiastic Electrical and Electronics Engineer based in Kathmandu, Nepal, with a passion for innovation, technology, and problem-solving. I specialize in communication systems, networking, and IT support, combining academic knowledge with hands-on experience to deliver practical and efficient tech solutions.</p>
+                        <div class="about-more collapse" id="aboutMore">
+                            <p>I hold a Bachelor's Degree in Electrical and Electronics Engineering (Communication) from Kathmandu University, and a Diploma in Electrical Engineering from CTEVT. My work spans a variety of impactful projects including IoT-based agriculture systems, SCARA robotic arms, beam steering using sensor fusion, and Nepal's first High Altitude Balloon Project.</p>
+                            <p>My professional journey includes providing technical support, configuring network and security systems, and contributing to research-driven development in IT and electronics. I've also led national-level STEM initiatives like Aavishkar '24, collaborated with academic and municipal partners, and trained over 200 students in hands-on robotics and electronics.</p>
+                            <p><strong>My core skills include:</strong></p>
+                            <ul>
+                                <li><strong>Programming:</strong> Python, C, C++, MATLAB, HTML, CSS</li>
+                                <li><strong>Networking & IT Support:</strong> LAN/WAN design, troubleshooting, system setup</li>
+                            </ul>
+                        </div>
+                        <button class="read-more-btn" id="readMoreBtn" onclick="toggleAboutMore()">Read More</button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="stats-container">
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-code"></i>
+                            <h3>5+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>15+</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-users"></i>
+                            <h3>8+</h3>
+                            <p>Clients</p>
+                        </div>
+                        <!-- <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-layer-group"></i>
+                            <h3>10+</h3>
+                            <p>Tech Stacks</p>
+                        </div> -->
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+                            <i class="fas fa-trophy"></i>
+                            <h3>6+</h3>
+                            <p>Leadership Roles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey">
+        <div class="section-container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline-container">
+                <!-- Education -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Education</h3>
+                        <div class="timeline-entry">
+                            <h4>Bachelor's in Electrical and Electronics Engineering</h4>
+                            <p>Kathmandu University, School of Engineering</p>
+                            <p>Specialized in communication systems, digital signal processing, and networking</p>
+                            <span>2019 - 2024 | GPA: 3.24/4.00</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>Diploma in Electrical Engineering</h4>
+                            <p>CTEVT, Balaju School of Engineering and Technology</p>
+                            <p>Strong fundamentals in power systems, machines, electronics, and installations</p>
+                            <span>2015 - 2018</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Key Projects</h3>
+                        <div class="timeline-entry">
+                            <h4>IMU & GPS Beam Steering System</h4>
+                            <p>Created a MATLAB-based sensor fusion system to optimize antenna direction using GPS and IMU data</p>
+                            <span>2023 - 2024</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>LoRa-Based Agriculture System</h4>
+                            <p>Developed an IoT-based smart irrigation solution using LoRa and ESP32</p>
+                            <span>2022 - 2023</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>SCARA Robotic Arm Project</h4>
+                            <p>Designed and fabricated a 4-DOF robotic arm with Arduino-based control</p>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Leadership & Activities</h3>
+                        <div class="timeline-entry">
+                            <h4>Coordinator, Aavishkar '24</h4>
+                            <p>KU Robotics Club</p>
+                            <p>Organized large-scale robotics event with 3500+ attendees and 7 workshops. Trained 200+ students and tripled event revenue.</p>
+                            <span>2024</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>SEDS-KU Secretary</h4>
+                            <p>Maintained internal operations, media content, and communication across departments</p>
+                            <span>2023 - 2024</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>SEDS-KU Project Manager</h4>
+                            <p>Led Nepal's first high-altitude balloon project, securing funds, managing logistics, and gaining media coverage</p>
+                            <span>2022 - 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Professional Experience</h3>
+                        <div class="timeline-entry">
+                            <h4>Technical Assistant</h4>
+                            <p>Elite Network and Communication Pvt. Ltd.</p>
+                            <p>Provided tech support, network configuration, system maintenance, and documentation</p>
+                            <span>June 2024 - April 2025</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>Intern</h4>
+                            <p>Elite Network and Communication Pvt. Ltd.</p>
+                            <p>Hands-on experience with IT infrastructure, CCTV setup, AVITECH systems, and field maintenance</p>
+                            <span>April - May 2024</span>
+                        </div>
+                        <div class="timeline-entry">
+                            <h4>Workshop Event Associate</h4>
+                            <p>EEPEX 24 (SEEE)</p>
+                            <p>Conducted technical sessions for STEM promotion in schools and colleges</p>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Certifications</h3>
+                        <div class="timeline-entry">
+                            <h4>Professional Development</h4>
+                            <p>Coding & Web Development - Leeds, Coursera</p>
+                            <p>Digital Marketing - Google</p>
+                            <p>Cybersecurity & Networking - Cisco, Coursera</p>
+                            <span>2022 - 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="zoom-in">
+                    <i class="fas fa-palette"></i>
+                    <h3>Graphics Design</h3>
+                    <p>Creative visual solutions for branding, marketing, and digital content.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Design</h3>
+                    <p>Modern, responsive websites tailored to your needs and audience.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-microchip"></i>
+                    <h3>STEM Training</h3>
+                    <p>Workshops and training sessions in science, technology, engineering, and math.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>System Design</h3>
+                    <p>Design and documentation of electrical, electronic, and IT systems for various applications.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>IT Support & Networking</h3>
+                    <p>System configuration, network design (LAN/WAN), surveillance systems, and troubleshooting.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fas fa-brain"></i>
+                    <h3>Project Development & Documentation</h3>
+                    <p>End-to-end technical project planning, prototyping, training, and detailed reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>IMU & GPS Beam Steering</h3>
+                        <p>Sensor fusion and beam steering for antenna directionality using MATLAB and embedded systems.</p>
+                        <div class="project-tech">
+                            <span><i class="fab fa-matlab"></i> MATLAB</span>
+                            <span><i class="fas fa-microchip"></i> Embedded</span>
+                            <span><i class="fas fa-satellite"></i> GPS</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>LoRa Agriculture System</h3>
+                        <p>IoT-enabled smart irrigation and farm monitoring system using LoRa and ESP32.</p>
+                        <div class="project-tech">
+                            <span><i class="fas fa-wifi"></i> LoRa</span>
+                            <span><i class="fas fa-microchip"></i> ESP32</span>
+                            <span><i class="fas fa-cloud"></i> IoT</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SCARA Robotic Arm</h3>
+                        <p>4-DOF robotic arm with Arduino-based control system and feedback mechanisms.</p>
+                        <div class="project-tech">
+                            <span><i class="fas fa-microchip"></i> Arduino</span>
+                            <span><i class="fas fa-cogs"></i> Robotics</span>
+                            <span><i class="fas fa-code"></i> C++</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="section-container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <article class="blog-card" data-aos="fade-up">
+                    <!-- <img src="img/blog1.jpg" alt="Sensor Fusion System"> -->
+                    <div class="blog-content">
+                        <h3>Coming Soon</h3>
+                        <!-- <h3>How I Built a Sensor Fusion System</h3>
+                        <p>Lessons learned from integrating IMU and GPS for real-world applications.</p>
+                        <a href="#" class="read-more">Read More</a> -->
+                    </div>
+                <!-- </article>
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/blog2.jpg" alt="LoRa IoT">
+                    <div class="blog-content">
+                        <h3>Getting Started with LoRa IoT</h3>
+                        <p>Beginner's guide to long-range wireless communication for IoT projects.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/blog3.jpg" alt="Robotic Arm">
+                    <div class="blog-content">
+                        <h3>Designing a Robotic Arm</h3>
+                        <p>From concept to prototype: my journey building a SCARA robot.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <form class="contact-form" data-aos="fade-right">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div class="contact-info" data-aos="fade-left">
+                    
+                    <div class="map-container" style="margin-top: 2rem;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.026073964839!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a4b0b0b0b%3A0x0!2zMjfCsDQzJzAyLjAiTiA4NcKwMTknMjcuNCJF!5e0!3m2!1sen!2snp!4v1680000000000!5m2!1sen!2snp" width="100%" height="250" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Surendra Pant. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="three-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
