@@ -27,12 +27,8 @@ const themeToggle = document.querySelector('.theme-toggle');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 function setInitialTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else {
-        document.documentElement.setAttribute('data-theme', prefersDarkScheme.matches ? 'dark' : 'light');
-    }
+    document.documentElement.setAttribute('data-theme', 'light');
+    console.log('Theme set to default: light');
 }
 
 function toggleTheme() {
@@ -53,24 +49,6 @@ prefersDarkScheme.addEventListener('change', (e) => {
 });
 
 setInitialTheme();
-
-// Back to Top Button
-const backToTop = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
 
 // Mobile Menu
 const menuBtn = document.querySelector('.menu-btn');
@@ -153,139 +131,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Particles.js Configuration
-particlesJS('particles-js', {
-    particles: {
-        number: {
-            value: 80,
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: '#a259ff'
-        },
-        shape: {
-            type: 'circle'
-        },
-        opacity: {
-            value: 0.5,
-            random: false
-        },
-        size: {
-            value: 3,
-            random: true
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: '#a259ff',
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: 'none',
-            random: false,
-            straight: false,
-            out_mode: 'out',
-            bounce: false
-        }
-    },
-    interactivity: {
-        detect_on: 'canvas',
-        events: {
-            onhover: {
-                enable: true,
-                mode: 'grab'
-            },
-            onclick: {
-                enable: true,
-                mode: 'push'
-            },
-            resize: true
-        },
-        modes: {
-            grab: {
-                distance: 140,
-                line_linked: {
-                    opacity: 1
-                }
-            },
-            push: {
-                particles_nb: 4
-            }
-        }
-    },
-    retina_detect: true
-});
-
-// Vanilla Tilt Effect
-VanillaTilt.init(document.querySelectorAll('.service-card'), {
-    max: 15,
-    speed: 400,
-    glare: true,
-    'max-glare': 0.5
-});
-
-// Form Validation
-const contactForm = document.querySelector('.contact-form');
-const formGroups = document.querySelectorAll('.form-group');
-
-const validateEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-};
-
-const validateForm = () => {
-    let isValid = true;
-    
-    formGroups.forEach(group => {
-        const input = group.querySelector('input, textarea');
-        const errorMessage = group.querySelector('.error-message');
-        
-        if (!input.value.trim()) {
-            group.classList.add('error');
-            errorMessage.textContent = 'This field is required';
-            isValid = false;
-        } else if (input.type === 'email' && !validateEmail(input.value)) {
-            group.classList.add('error');
-            errorMessage.textContent = 'Please enter a valid email';
-            isValid = false;
-        } else {
-            group.classList.remove('error');
-        }
-    });
-    
-    return isValid;
-};
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-        // Add your form submission logic here
-        console.log('Form submitted successfully');
-    }
-});
-
-// Ripple Effect for Buttons
-document.querySelectorAll('.cta-button, .submit-btn').forEach(button => {
+// Button Ripple Effect
+document.querySelectorAll('.cta-button, .submit-btn, .read-more-btn, .project-link, .portfolio-link, .go-to-top, .theme-toggle').forEach(button => {
     button.addEventListener('click', function(e) {
-        const x = e.clientX - e.target.offsetLeft;
-        const y = e.clientY - e.target.offsetTop;
-        
+        const x = e.clientX - e.target.getBoundingClientRect().left;
+        const y = e.clientY - e.target.getBoundingClientRect().top;
         const ripple = document.createElement('span');
         ripple.classList.add('ripple');
         ripple.style.left = `${x}px`;
         ripple.style.top = `${y}px`;
-        
         this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
+        setTimeout(() => ripple.remove(), 600);
     });
+});
+
+// Fine-tuned Vanilla Tilt for Cards
+VanillaTilt.init(document.querySelectorAll('.service-card, .project-card, .blog-card, .stat-card'), {
+    max: 10,
+    speed: 500,
+    glare: true,
+    'max-glare': 0.2,
+    scale: 1.04,
+    perspective: 900
 });
 
 // Scroll Progress Indicator
@@ -329,145 +196,88 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Interactive Map
-const mapContainer = document.querySelector('.map-container');
-let map;
-
-function initMap() {
-    // Replace with your Google Maps API key
-    const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
-    const location = { lat: YOUR_LAT, lng: YOUR_LNG };
+// About Section Toggle
+function toggleAboutMore() {
+    const aboutMore = document.getElementById('aboutMore');
+    const readMoreBtn = document.getElementById('readMoreBtn');
     
-    map = new google.maps.Map(document.querySelector('.map-container'), {
-        center: location,
-        zoom: 15,
-        styles: [
-            {
-                "featureType": "all",
-                "elementType": "geometry",
-                "stylers": [{"color": "#242f3e"}]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.text.stroke",
-                "stylers": [{"lightness": -80}]
-            },
-            {
-                "featureType": "administrative",
-                "elementType": "labels.text.fill",
-                "stylers": [{"color": "#746855"}]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [{"color": "#1a1a1a"}]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [{"color": "#1a1a1a"}]
-            },
-            {
-                "featureType": "road",
-                "elementType": "geometry",
-                "stylers": [{"color": "#2c2c2c"}]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [{"color": "#1a1a1a"}]
-            }
-        ]
-    });
-    
-    const marker = new google.maps.Marker({
-        position: location,
-        map: map,
-        title: 'Your Location'
-    });
+    if (aboutMore.classList.contains('collapse')) {
+        aboutMore.classList.remove('collapse');
+        readMoreBtn.textContent = 'Read Less';
+    } else {
+        aboutMore.classList.add('collapse');
+        readMoreBtn.textContent = 'Read More';
+    }
 }
 
-// SEO Optimization
-document.addEventListener('DOMContentLoaded', () => {
-    // Add meta description
-    const metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
-    metaDescription.content = 'Your professional portfolio showcasing web development, design, and creative projects.';
-    document.head.appendChild(metaDescription);
-    
-    // Add Open Graph tags
-    const ogTitle = document.createElement('meta');
-    ogTitle.property = 'og:title';
-    ogTitle.content = document.title;
-    document.head.appendChild(ogTitle);
-    
-    const ogDescription = document.createElement('meta');
-    ogDescription.property = 'og:description';
-    ogDescription.content = metaDescription.content;
-    document.head.appendChild(ogDescription);
-    
-    const ogImage = document.createElement('meta');
-    ogImage.property = 'og:image';
-    ogImage.content = 'path/to/your/portfolio-image.jpg';
-    document.head.appendChild(ogImage);
-    
-    // Add Twitter Card tags
-    const twitterCard = document.createElement('meta');
-    twitterCard.name = 'twitter:card';
-    twitterCard.content = 'summary_large_image';
-    document.head.appendChild(twitterCard);
-    
-    const twitterTitle = document.createElement('meta');
-    twitterTitle.name = 'twitter:title';
-    twitterTitle.content = document.title;
-    document.head.appendChild(twitterTitle);
-    
-    const twitterDescription = document.createElement('meta');
-    twitterDescription.name = 'twitter:description';
-    twitterDescription.content = metaDescription.content;
-    document.head.appendChild(twitterDescription);
-    
-    const twitterImage = document.createElement('meta');
-    twitterImage.name = 'twitter:image';
-    twitterImage.content = ogImage.content;
-    document.head.appendChild(twitterImage);
-});
+// Go to Top Button
+const goToTopButton = document.querySelector('.go-to-top');
 
-// Performance Optimization
-document.addEventListener('DOMContentLoaded', () => {
-    // Lazy load images
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-    
-    // Defer non-critical JavaScript
-    const deferScripts = document.querySelectorAll('script[data-defer]');
-    deferScripts.forEach(script => {
-        const newScript = document.createElement('script');
-        newScript.src = script.src;
-        newScript.async = true;
-        script.parentNode.replaceChild(newScript, script);
-    });
-});
-
-function toggleAboutMore() {
-    const more = document.getElementById('aboutMore');
-    const btn = document.getElementById('readMoreBtn');
-    if (more.classList.contains('collapse')) {
-        more.classList.remove('collapse');
-        btn.textContent = 'Read Less';
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        goToTopButton.classList.add('visible');
     } else {
-        more.classList.add('collapse');
-        btn.textContent = 'Read More';
+        goToTopButton.classList.remove('visible');
     }
+});
+
+goToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Contact Form Handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const formEntries = Object.fromEntries(formData.entries());
+        
+        // Create URLSearchParams for the form data
+        const params = new URLSearchParams();
+        Object.entries(formEntries).forEach(([name, value]) => {
+            params.append(name, value);
+        });
+        
+        try {
+            // Submit the form data
+            const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSfTCyhEN7moLfdJtTdUhTFoamNKxoxLIqb3hNhHXN5Yi0RmXQ/formResponse', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: params
+            });
+            
+            // Show success message
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            
+            // Reset form and button after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+            
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error!';
+            submitBtn.style.background = 'linear-gradient(135deg, #ff4444, #cc0000)';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        }
+    });
 }
