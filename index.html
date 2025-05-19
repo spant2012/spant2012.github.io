@@ -48,7 +48,7 @@
     </nav>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Back to top">
+    <button class="go-to-top" aria-label="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -84,10 +84,10 @@
                 Electrical & Electronics Engineer specializing in communication systems, IoT, and innovative tech solutions. Passionate about bridging hardware and software to solve real-world problems.
             </p>
             <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/yourusername" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourusername" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/yourusername" class="social-icon"><i class="fab fa-instagram"></i></a>
             </div>
             <a href="#contact" class="cta-button">Say Hello!</a>
         </div>
@@ -130,11 +130,6 @@
                             <h3>8+</h3>
                             <p>Clients</p>
                         </div>
-                        <!-- <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-                            <i class="fas fa-layer-group"></i>
-                            <h3>10+</h3>
-                            <p>Tech Stacks</p>
-                        </div> -->
                         <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
                             <i class="fas fa-trophy"></i>
                             <h3>6+</h3>
@@ -373,60 +368,49 @@
             <h2 class="section-title">Latest Blog Posts</h2>
             <div class="blog-grid">
                 <article class="blog-card" data-aos="fade-up">
-                    <!-- <img src="img/blog1.jpg" alt="Sensor Fusion System"> -->
                     <div class="blog-content">
                         <h3>Coming Soon</h3>
-                        <!-- <h3>How I Built a Sensor Fusion System</h3>
-                        <p>Lessons learned from integrating IMU and GPS for real-world applications.</p>
-                        <a href="#" class="read-more">Read More</a> -->
-                    </div>
-                <!-- </article>
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="img/blog2.jpg" alt="LoRa IoT">
-                    <div class="blog-content">
-                        <h3>Getting Started with LoRa IoT</h3>
-                        <p>Beginner's guide to long-range wireless communication for IoT projects.</p>
-                        <a href="#" class="read-more">Read More</a>
                     </div>
                 </article>
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="img/blog3.jpg" alt="Robotic Arm">
-                    <div class="blog-content">
-                        <h3>Designing a Robotic Arm</h3>
-                        <p>From concept to prototype: my journey building a SCARA robot.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article> -->
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contact Form -->
+    <section id="contact" class="contact-section">
         <div class="section-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-container">
-                <form class="contact-form" data-aos="fade-right">
-                    <div class="form-group">
-                        <input type="text" id="name" required>
-                        <label for="name">Name</label>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Let's discuss your next project</p>
+            <div class="form-container" data-aos="fade-up">
+                <form id="contactForm" class="custom-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="entry.2005620554" required>
+                            <label for="name">Your Name</label>
+                            <div class="form-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="entry.1045781291" required>
+                            <label for="email">Your Email</label>
+                            <div class="form-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
-                        <label for="email">Email</label>
+                        <textarea id="message" name="entry.839337160" required></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="form-icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" required></textarea>
-                        <label for="message">Message</label>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
-                <div class="contact-info" data-aos="fade-left">
-                    
-                    <div class="map-container" style="margin-top: 2rem;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.026073964839!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a4b0b0b0b%3A0x0!2zMjfCsDQzJzAyLjAiTiA4NcKwMTknMjcuNCJF!5e0!3m2!1sen!2snp!4v1680000000000!5m2!1sen!2snp" width="100%" height="250" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -435,12 +419,6 @@
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2024 Surendra Pant. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
         </div>
     </footer>
 
