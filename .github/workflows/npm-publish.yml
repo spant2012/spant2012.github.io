@@ -7,14 +7,18 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.5.0
+      - uses: actions/setup-node@e1f4d90a219f802036c792f5421a719533d239d5 # v1.4.4
         with:
-          node-version: 12
+          node-version: 18.x
       - run: npm ci
       - run: npm test
 
@@ -22,10 +26,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.5.0
+      - uses: actions/setup-node@e1f4d90a219f802036c792f5421a719533d239d5 # v1.4.4
         with:
-          node-version: 12
+          node-version: 18.x
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm publish
@@ -36,10 +40,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.5.0
+      - uses: actions/setup-node@e1f4d90a219f802036c792f5421a719533d239d5 # v1.4.4
         with:
-          node-version: 12
+          node-version: 18.x
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npm publish
