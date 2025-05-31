@@ -4,10 +4,14 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "obfuscate": "npx javascript-obfuscator script.js --output dist/script.js && npx javascript-obfuscator three-config.js --output dist/three-config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "javascript-obfuscator": "^4.1.0"
+  }
 }
